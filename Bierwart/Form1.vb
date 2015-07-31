@@ -429,6 +429,21 @@ Public Class Form1
 
     Private Sub SaveOut()
 
+        'Dim Konto(1000, 4) As String ' Datum Bezeichnung Konto Betrag Saldo
+        'Dim KontoPointer As Integer 'Counter im Kontoarray
+
+        'Dim BarKonto(1000, 4) As String ' Datum Bezeichnung Konto Betrag Saldo
+        'Dim BarKontoPointer As Integer 'Counter im BarKontoarray
+
+        'Dim Tresenrechnung(1000, 11) As String 'Nummer Datum Name Fassbier Flaschenbier Bierjunge Fassbrause Softgetränke Wasser Fassspenden Sonstiges Gesamt
+        'Dim TresenrechnungPointer As Integer 'Counter im Kontoarray
+
+        'Dim Lieferabwicklung(500, 11) As String 'Nummer Datum Name Fassbier Flaschenbier Bierjunge Fassbrause Softgetränke Wasser Fassspenden Sonstiges Gesamt
+        'Dim LieferabwicklungPointer As Integer 'Counter im Kontoarray
+
+
+
+        'Personendaten speichern
         Dim PersonFile As New System.IO.StreamWriter("Person.csv")
 
         For i = 0 To 50
@@ -437,10 +452,58 @@ Public Class Form1
             End If
         Next
 
-
         PersonFile.Close()
-
         PersonFile = Nothing
+
+        'Girodaten speichern
+        Dim KontoFile As New System.IO.StreamWriter("Kontobuch.csv")
+
+        For i = 0 To 1000
+            If Konto(i, 0) <> "" Then
+                KontoFile.WriteLine(Konto(i, 0) & ";" & Konto(i, 1) & ";" & Konto(i, 2) & ";" & Konto(i, 3) & ";")
+            End If
+        Next
+
+        KontoFile.Close()
+        KontoFile = Nothing
+
+        'Bardatenspeichern
+        Dim BarKontoFile As New System.IO.StreamWriter("BarKontoBuch.csv")
+
+        For i = 0 To 1000
+            If BarKonto(i, 0) <> "" Then
+                BarKontoFile.WriteLine(BarKonto(i, 0) & ";" & BarKonto(i, 1) & ";" & BarKonto(i, 2) & ";" & BarKonto(i, 3) & ";")
+            End If
+        Next
+
+        BarKontoFile.Close()
+        BarKontoFile = Nothing
+
+        'Tresenrechnung speichern
+        Dim TresenrechnungFile As New System.IO.StreamWriter("Tresenrechnung.csv")
+
+        For i = 0 To 50
+            If Tresenrechnung(i, 0) <> "" Then
+                TresenrechnungFile.WriteLine(Tresenrechnung(i, 0) & ";" & Tresenrechnung(i, 1) & ";" & Tresenrechnung(i, 2) & ";" & Tresenrechnung(i, 3) & ";" & Tresenrechnung(i, 4) & ";" & Tresenrechnung(i, 5) & ";" & Tresenrechnung(i, 6) & ";" & Tresenrechnung(i, 7) & ";" & Tresenrechnung(i, 8) & ";" & Tresenrechnung(i, 9) & ";" & Tresenrechnung(i, 10) & ";" & Tresenrechnung(i, 11) & ";")
+            End If
+        Next
+
+        TresenrechnungFile.Close()
+        TresenrechnungFile = Nothing
+
+        ''Lieferabwicklung speichern
+        'Dim TresenrechnungFile As New System.IO.StreamReader("Tresenrechnung.csv")
+
+        'For i = 0 To 50
+        '    If Person(i, 0) <> "" Then
+        '        PersonFile.WriteLine(Person(i, 0) & ";" & Person(i, 1) & ";" & Person(i, 2) & ";")
+        '    End If
+        'Next
+
+        'PersonFile.Close()
+        'PersonFile = Nothing
+
+
 
         MsgBox("Gespeichert")
 

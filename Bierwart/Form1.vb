@@ -49,6 +49,8 @@ Public Class Form1
     End Sub
     Private Sub LoadIn()
 
+
+
         Dim PersonFile As New System.IO.StreamReader("Person.csv")
 
         PersonPointer = 0
@@ -69,6 +71,7 @@ Public Class Form1
         Loop
         PersonFile.Close()
         PersonFile = Nothing
+
 
         Dim KontoFile As New System.IO.StreamReader("Kontobuch.csv")
 
@@ -93,6 +96,7 @@ Public Class Form1
         KontoFile.Close()
         KontoFile = Nothing
 
+
         Dim TresenrechnungFile As New System.IO.StreamReader("Tresenrechnung.csv")
 
         TresenrechnungPointer = 0
@@ -115,16 +119,12 @@ Public Class Form1
                 Tresenrechnung(TresenrechnungPointer, 9) = DataImportSplit(9) ' BierkisteOUTLeer
                 Tresenrechnung(TresenrechnungPointer, 10) = DataImportSplit(10) ' SoftdrinksOUTVoll
                 Tresenrechnung(TresenrechnungPointer, 11) = DataImportSplit(11) ' SoftdrinksOutLeer
-                Tresenrechnung(TresenrechnungPointer, 12) = DataImportSplit(12) ' WasserOUtLeer
-                Tresenrechnung(TresenrechnungPointer, 13) = DataImportSplit(13) ' WasserOutVoll
-                Tresenrechnung(TresenrechnungPointer, 14) = DataImportSplit(14) ' FassbrauseOut
                 TresenrechnungPointer += 1
             End If
 
         Loop
         TresenrechnungFile.Close()
         TresenrechnungFile = Nothing
-
 
         Dim BarKontoFile As New System.IO.StreamReader("BarKontoBuch.csv")
 
@@ -149,7 +149,6 @@ Public Class Form1
         BarKontoFile.Close()
         BarKontoFile = Nothing
 
-
         Dim LieferabwicklungFile As New System.IO.StreamReader("Lieferabwicklung.csv")
 
         LieferabwicklungPointer = 0
@@ -172,6 +171,9 @@ Public Class Form1
                 Lieferabwicklung(LieferabwicklungPointer, 9) = DataImportSplit(9) ' Fassspenden
                 Lieferabwicklung(LieferabwicklungPointer, 10) = DataImportSplit(10) ' Sonstiges
                 Lieferabwicklung(LieferabwicklungPointer, 11) = DataImportSplit(11) ' Gesamt
+                Lieferabwicklung(LieferabwicklungPointer, 12) = DataImportSplit(12) ' Sonstiges
+                Lieferabwicklung(LieferabwicklungPointer, 13) = DataImportSplit(13) ' Gesamt
+                Lieferabwicklung(LieferabwicklungPointer, 14) = DataImportSplit(14) ' Gesamt
                 LieferabwicklungPointer += 1
             End If
         Loop
@@ -179,6 +181,7 @@ Public Class Form1
         LieferabwicklungFile.Close()
         LieferabwicklungFile = Nothing
 
+        MsgBox("Laden")
 
     End Sub
     Private Sub LoadIn2()
@@ -236,6 +239,31 @@ Public Class Form1
                 ListView4.Items(i).SubItems.Add(BarKonto(i, 4))
             End If
         Next
+
+        ListView5.Items.Clear()
+
+        For i = 0 To 500
+            If Lieferabwicklung(i, 0) <> "" Then
+                ListView5.Items.Add(Lieferabwicklung(i, 0))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 1))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 2))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 3))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 4))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 5))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 6))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 7))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 8))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 9))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 10))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 11))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 12))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 13))
+                ListView5.Items(i).SubItems.Add(Lieferabwicklung(i, 14))
+            End If
+        Next
+
+
+
 
     End Sub
 
@@ -443,15 +471,28 @@ Public Class Form1
 
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        'Nummer Datum Name Fassbier Flaschenbier Bierjunge Fassbrause Softgetränke Wasser Fassspenden Sonstiges Gesamt
+
+        'Datum Rechnungsbetrag BierfassIn BierkisteIn SoftgetränkeIN FassbrauseIN WasserKisteIN BierfassOUT BierkisteOUTVoll BierkisteOUTLeer SoftdrinksOUTVoll SoftdrinksOutLeer WasserOUtLeer WasserOutVoll FassbrauseOut
         Lieferabwicklung(LieferabwicklungPointer, 0) = DateTimePicker4.Value
+        Lieferabwicklung(LieferabwicklungPointer, 1) = TextBox17.Text 'Rechnungbetrag
+        Lieferabwicklung(LieferabwicklungPointer, 2) = TextBox18.Text 'BierfassIN
+        Lieferabwicklung(LieferabwicklungPointer, 3) = TextBox20.Text 'BierkisteIn
+        Lieferabwicklung(LieferabwicklungPointer, 4) = TextBox23.Text 'SoftgetränkeIN
+        Lieferabwicklung(LieferabwicklungPointer, 5) = TextBox29.Text 'FassbrauseIN
+        Lieferabwicklung(LieferabwicklungPointer, 6) = TextBox26.Text 'WasserKisteIN
+        Lieferabwicklung(LieferabwicklungPointer, 7) = TextBox19.Text 'BierfassOUT
+        Lieferabwicklung(LieferabwicklungPointer, 8) = TextBox22.Text 'BierkisteOUTVoll 
+        Lieferabwicklung(LieferabwicklungPointer, 9) = TextBox21.Text 'BierkisteOUTLeer
+        Lieferabwicklung(LieferabwicklungPointer, 10) = TextBox25.Text 'SoftdrinksOUTVoll
+        Lieferabwicklung(LieferabwicklungPointer, 11) = TextBox24.Text 'SoftdrinksOutLeer
+        Lieferabwicklung(LieferabwicklungPointer, 12) = TextBox27.Text 'WasserOUtLeer
+        Lieferabwicklung(LieferabwicklungPointer, 13) = TextBox28.Text 'WasserOutVoll
+        Lieferabwicklung(LieferabwicklungPointer, 14) = TextBox30.Text 'FassbrauseOut
 
-
-
+        LoadIn2()
 
 
     End Sub
-
 
     Private Sub SpeichernToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SpeichernToolStripMenuItem1.Click
 

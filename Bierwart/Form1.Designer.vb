@@ -1027,7 +1027,7 @@ Partial Class Form1
         'ListView5
         '
         Me.ListView5.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader26, Me.ColumnHeader27, Me.ColumnHeader28, Me.ColumnHeader29, Me.ColumnHeader30, Me.ColumnHeader31, Me.ColumnHeader32, Me.ColumnHeader33, Me.ColumnHeader34, Me.ColumnHeader35, Me.ColumnHeader36, Me.ColumnHeader37, Me.ColumnHeader38, Me.ColumnHeader39, Me.ColumnHeader40})
-        Me.ListView5.Location = New System.Drawing.Point(6, 15)
+        Me.ListView5.Location = New System.Drawing.Point(22, 6)
         Me.ListView5.Name = "ListView5"
         Me.ListView5.Size = New System.Drawing.Size(1140, 235)
         Me.ListView5.TabIndex = 0

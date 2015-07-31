@@ -10,7 +10,7 @@
 Public Class Form1
 
     Dim DataImport As String
-    Dim DataImportSplit(12) As String
+    Dim DataImportSplit(15) As String
 
     Dim Person(50, 2) As String 'ID Name Kaution
     Dim PersonPointer As Integer 'Counter im Personarray
@@ -24,7 +24,7 @@ Public Class Form1
     Dim Tresenrechnung(1000, 11) As String 'Nummer Datum Name Fassbier Flaschenbier Bierjunge Fassbrause Softgetränke Wasser Fassspenden Sonstiges Gesamt
     Dim TresenrechnungPointer As Integer 'Counter im Kontoarray
 
-    Dim Lieferabwicklung(500, 11) As String 'Nummer Datum Name Fassbier Flaschenbier Bierjunge Fassbrause Softgetränke Wasser Fassspenden Sonstiges Gesamt
+    Dim Lieferabwicklung(500, 14) As String 'Datum Rechnungsbetrag BierfassIn BierkisteIn SoftgetränkeIN FassbrauseIN WasserKisteIN BierfassOUT BierkisteOUTVoll BierkisteOUTLeer SoftdrinksOUTVoll SoftdrinksOutLeer WasserOUtLeer WasserOutVoll FassbrauseOut
     Dim LieferabwicklungPointer As Integer 'Counter im Kontoarray
 
     Dim GetränkeWert(7) As Single 'Fassbier 1 Flaschenbier 1 Bierjunge 1,5 Fassbrause 0,5 Softgetränke 1 Wasser 0,5 Fassspenden 1 Sonstiges 1
@@ -103,18 +103,21 @@ Public Class Form1
             If DataImport <> "" Then
 
                 DataImportSplit = DataImport.Split(";")
-                Tresenrechnung(TresenrechnungPointer, 0) = DataImportSplit(0) ' Nummer
-                Tresenrechnung(TresenrechnungPointer, 1) = DataImportSplit(1) ' Datum
-                Tresenrechnung(TresenrechnungPointer, 2) = DataImportSplit(2) ' Name
-                Tresenrechnung(TresenrechnungPointer, 3) = DataImportSplit(3) ' Fassbier
-                Tresenrechnung(TresenrechnungPointer, 4) = DataImportSplit(4) ' Flaschenbier
-                Tresenrechnung(TresenrechnungPointer, 5) = DataImportSplit(5) ' Bierjunge
-                Tresenrechnung(TresenrechnungPointer, 6) = DataImportSplit(6) ' Fassbrause
-                Tresenrechnung(TresenrechnungPointer, 7) = DataImportSplit(7) ' Softgetränke
-                Tresenrechnung(TresenrechnungPointer, 8) = DataImportSplit(8) ' Wasser
-                Tresenrechnung(TresenrechnungPointer, 9) = DataImportSplit(9) ' Fassspenden
-                Tresenrechnung(TresenrechnungPointer, 10) = DataImportSplit(10) ' Sonstiges
-                Tresenrechnung(TresenrechnungPointer, 11) = DataImportSplit(11) ' Gesamt
+                Tresenrechnung(TresenrechnungPointer, 0) = DataImportSplit(0) ' Datum              
+                Tresenrechnung(TresenrechnungPointer, 1) = DataImportSplit(1) ' Rechnungsbetrag
+                Tresenrechnung(TresenrechnungPointer, 2) = DataImportSplit(2) ' BierfassIn
+                Tresenrechnung(TresenrechnungPointer, 3) = DataImportSplit(3) ' BierkisteIn
+                Tresenrechnung(TresenrechnungPointer, 4) = DataImportSplit(4) ' SoftgetränkeIN
+                Tresenrechnung(TresenrechnungPointer, 5) = DataImportSplit(5) ' FassbrauseIN
+                Tresenrechnung(TresenrechnungPointer, 6) = DataImportSplit(6) ' WasserKisteIN
+                Tresenrechnung(TresenrechnungPointer, 7) = DataImportSplit(7) ' BierfassOUT
+                Tresenrechnung(TresenrechnungPointer, 8) = DataImportSplit(8) ' BierkisteOUTVoll
+                Tresenrechnung(TresenrechnungPointer, 9) = DataImportSplit(9) ' BierkisteOUTLeer
+                Tresenrechnung(TresenrechnungPointer, 10) = DataImportSplit(10) ' SoftdrinksOUTVoll
+                Tresenrechnung(TresenrechnungPointer, 11) = DataImportSplit(11) ' SoftdrinksOutLeer
+                Tresenrechnung(TresenrechnungPointer, 12) = DataImportSplit(12) ' WasserOUtLeer
+                Tresenrechnung(TresenrechnungPointer, 13) = DataImportSplit(13) ' WasserOutVoll
+                Tresenrechnung(TresenrechnungPointer, 14) = DataImportSplit(14) ' FassbrauseOut
                 TresenrechnungPointer += 1
             End If
 
@@ -146,7 +149,36 @@ Public Class Form1
         BarKontoFile.Close()
         BarKontoFile = Nothing
 
-       
+
+        Dim LieferabwicklungFile As New System.IO.StreamReader("Lieferabwicklung.csv")
+
+        LieferabwicklungPointer = 0
+
+        Do While LieferabwicklungFile.Peek <> -1
+
+            DataImport = LieferabwicklungFile.ReadLine
+            If DataImport <> "" Then
+
+                DataImportSplit = DataImport.Split(";")
+                Lieferabwicklung(LieferabwicklungPointer, 0) = DataImportSplit(0) ' Nummer
+                Lieferabwicklung(LieferabwicklungPointer, 1) = DataImportSplit(1) ' Datum
+                Lieferabwicklung(LieferabwicklungPointer, 2) = DataImportSplit(2) ' Name
+                Lieferabwicklung(LieferabwicklungPointer, 3) = DataImportSplit(3) ' Fassbier
+                Lieferabwicklung(LieferabwicklungPointer, 4) = DataImportSplit(4) ' Flaschenbier
+                Lieferabwicklung(LieferabwicklungPointer, 5) = DataImportSplit(5) ' Bierjunge
+                Lieferabwicklung(LieferabwicklungPointer, 6) = DataImportSplit(6) ' Fassbrause
+                Lieferabwicklung(LieferabwicklungPointer, 7) = DataImportSplit(7) ' Softgetränke
+                Lieferabwicklung(LieferabwicklungPointer, 8) = DataImportSplit(8) ' Wasser
+                Lieferabwicklung(LieferabwicklungPointer, 9) = DataImportSplit(9) ' Fassspenden
+                Lieferabwicklung(LieferabwicklungPointer, 10) = DataImportSplit(10) ' Sonstiges
+                Lieferabwicklung(LieferabwicklungPointer, 11) = DataImportSplit(11) ' Gesamt
+                LieferabwicklungPointer += 1
+            End If
+        Loop
+
+        LieferabwicklungFile.Close()
+        LieferabwicklungFile = Nothing
+
 
     End Sub
     Private Sub LoadIn2()
@@ -482,7 +514,7 @@ Public Class Form1
         'Tresenrechnung speichern
         Dim TresenrechnungFile As New System.IO.StreamWriter("Tresenrechnung.csv")
 
-        For i = 0 To 50
+        For i = 0 To 1000
             If Tresenrechnung(i, 0) <> "" Then
                 TresenrechnungFile.WriteLine(Tresenrechnung(i, 0) & ";" & Tresenrechnung(i, 1) & ";" & Tresenrechnung(i, 2) & ";" & Tresenrechnung(i, 3) & ";" & Tresenrechnung(i, 4) & ";" & Tresenrechnung(i, 5) & ";" & Tresenrechnung(i, 6) & ";" & Tresenrechnung(i, 7) & ";" & Tresenrechnung(i, 8) & ";" & Tresenrechnung(i, 9) & ";" & Tresenrechnung(i, 10) & ";" & Tresenrechnung(i, 11) & ";")
             End If
@@ -491,18 +523,17 @@ Public Class Form1
         TresenrechnungFile.Close()
         TresenrechnungFile = Nothing
 
-        ''Lieferabwicklung speichern
-        'Dim TresenrechnungFile As New System.IO.StreamReader("Tresenrechnung.csv")
+        'Tresenrechnung speichern
+        Dim LieferabwicklungFile As New System.IO.StreamWriter("Lieferabwicklung.csv")
 
-        'For i = 0 To 50
-        '    If Person(i, 0) <> "" Then
-        '        PersonFile.WriteLine(Person(i, 0) & ";" & Person(i, 1) & ";" & Person(i, 2) & ";")
-        '    End If
-        'Next
+        For i = 0 To 500
+            If Lieferabwicklung(i, 0) <> "" Then
+                LieferabwicklungFile.WriteLine(Lieferabwicklung(i, 0) & ";" & Lieferabwicklung(i, 1) & ";" & Lieferabwicklung(i, 2) & ";" & Lieferabwicklung(i, 3) & ";" & Lieferabwicklung(i, 4) & ";" & Lieferabwicklung(i, 5) & ";" & Lieferabwicklung(i, 6) & ";" & Lieferabwicklung(i, 7) & ";" & Lieferabwicklung(i, 8) & ";" & Lieferabwicklung(i, 9) & ";" & Lieferabwicklung(i, 10) & ";" & Lieferabwicklung(i, 11) & ";" & Lieferabwicklung(i, 12) & ";" & Lieferabwicklung(i, 13) & ";" & Lieferabwicklung(i, 14) & ";")
+            End If
+        Next
 
-        'PersonFile.Close()
-        'PersonFile = Nothing
-
+        LieferabwicklungFile.Close()
+        LieferabwicklungFile = Nothing
 
 
         MsgBox("Gespeichert")

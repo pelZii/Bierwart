@@ -32,6 +32,9 @@ Public Class Form1
     Dim HighID As Integer
     Dim count As Integer
 
+    Dim newDebtor As debtor
+
+
     Private Sub BeendenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BeendenToolStripMenuItem.Click
 
         Me.Close()
@@ -584,4 +587,11 @@ Public Class Form1
 
 
 
+    Private Sub ForderungsrechnungToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ForderungsrechnungToolStripMenuItem.Click
+
+        debtor new 
+
+
+
+    End Sub
 End Class

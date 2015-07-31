@@ -421,4 +421,32 @@ Public Class Form1
     End Sub
 
 
+    Private Sub SpeichernToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles SpeichernToolStripMenuItem1.Click
+
+        SaveOut()
+
+    End Sub
+
+    Private Sub SaveOut()
+
+        Dim PersonFile As New System.IO.StreamWriter("Person.csv")
+
+        For i = 0 To 50
+            If Person(i, 0) <> "" Then
+                PersonFile.WriteLine(Person(i, 0) & ";" & Person(i, 1) & ";" & Person(i, 2) & ";")
+            End If
+        Next
+
+
+        PersonFile.Close()
+
+        PersonFile = Nothing
+
+        MsgBox("Gespeichert")
+
+
+    End Sub
+
+
+
 End Class

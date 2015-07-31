@@ -176,25 +176,25 @@ Partial Class Form1
         'SpeichernToolStripMenuItem1
         '
         Me.SpeichernToolStripMenuItem1.Name = "SpeichernToolStripMenuItem1"
-        Me.SpeichernToolStripMenuItem1.Size = New System.Drawing.Size(151, 22)
+        Me.SpeichernToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.SpeichernToolStripMenuItem1.Text = "Speichern"
         '
         'BestandsdatenToolStripMenuItem
         '
         Me.BestandsdatenToolStripMenuItem.Name = "BestandsdatenToolStripMenuItem"
-        Me.BestandsdatenToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.BestandsdatenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BestandsdatenToolStripMenuItem.Text = "Bestandsdaten"
         '
         'SpeichernToolStripMenuItem
         '
         Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
-        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.SpeichernToolStripMenuItem.Text = "Abschluss"
         '
         'BeendenToolStripMenuItem
         '
         Me.BeendenToolStripMenuItem.Name = "BeendenToolStripMenuItem"
-        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BeendenToolStripMenuItem.Text = "Beenden"
         '
         'KontoToolStripMenuItem
@@ -207,13 +207,13 @@ Partial Class Form1
         'GiroToolStripMenuItem
         '
         Me.GiroToolStripMenuItem.Name = "GiroToolStripMenuItem"
-        Me.GiroToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.GiroToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.GiroToolStripMenuItem.Text = "Giro"
         '
         'BarToolStripMenuItem
         '
         Me.BarToolStripMenuItem.Name = "BarToolStripMenuItem"
-        Me.BarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BarToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.BarToolStripMenuItem.Text = "Bar"
         '
         'RechnungToolStripMenuItem

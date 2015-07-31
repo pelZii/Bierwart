@@ -589,7 +589,14 @@ Public Class Form1
 
     Private Sub ForderungsrechnungToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ForderungsrechnungToolStripMenuItem.Click
 
-        debtor new 
+        For i = 0 To 50
+
+            newDebtor.IdentNummer = i
+
+            If newDebtor.IdentNummer Then
+        Next
+
+
 
 
 

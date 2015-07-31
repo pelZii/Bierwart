@@ -146,6 +146,8 @@ Partial Class Form1
         Me.ColumnHeader38 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader39 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader40 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ListView6 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader41 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -865,6 +867,7 @@ Partial Class Form1
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.ListView6)
         Me.TabPage5.Controls.Add(Me.Label6)
         Me.TabPage5.Location = New System.Drawing.Point(4, 24)
         Me.TabPage5.Name = "TabPage5"
@@ -1109,6 +1112,16 @@ Partial Class Form1
         Me.ColumnHeader40.Text = "Fassbrause Out"
         Me.ColumnHeader40.Width = 99
         '
+        'ListView6
+        '
+        Me.ListView6.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader41})
+        Me.ListView6.Location = New System.Drawing.Point(249, 372)
+        Me.ListView6.Name = "ListView6"
+        Me.ListView6.Size = New System.Drawing.Size(121, 97)
+        Me.ListView6.TabIndex = 1
+        Me.ListView6.UseCompatibleStateImageBehavior = False
+        Me.ListView6.View = System.Windows.Forms.View.Details
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1262,5 +1275,7 @@ Partial Class Form1
     Friend WithEvents TextBox26 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox25 As System.Windows.Forms.TextBox
     Friend WithEvents DateTimePicker4 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents ListView6 As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader41 As System.Windows.Forms.ColumnHeader
 
 End Class

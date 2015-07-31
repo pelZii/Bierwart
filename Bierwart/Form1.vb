@@ -12,7 +12,7 @@ Public Class Form1
     Dim DataImport As String
     Dim DataImportSplit(12) As String
 
-    Dim Person(50, 3) As String 'ID Name Kaution
+    Dim Person(50, 2) As String 'ID Name Kaution
     Dim PersonPointer As Integer 'Counter im Personarray
 
     Dim Konto(1000, 4) As String ' Datum Bezeichnung Konto Betrag Saldo
@@ -154,11 +154,11 @@ Public Class Form1
         ListView1.Items.Clear()
 
         For i = 0 To 50
-            If Person(i, 0) <> "" Then
-                ListView1.Items.Add(Person(i, 0))
-                ListView1.Items(i).SubItems.Add(Person(i, 1))
-                ListView1.Items(i).SubItems.Add(Person(i, 2))
-            End If
+            ' If Person(i, 0) <> "" Then
+            ListView1.Items.Add(Person(i, 0))
+            ListView1.Items(i).SubItems.Add(Person(i, 1))
+            ListView1.Items(i).SubItems.Add(Person(i, 2))
+            '  End If
         Next
 
 
@@ -293,16 +293,16 @@ Public Class Form1
         MsgBox("Abgeschlossen")
 
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         For i = 0 To 50
 
-            If CInt(TextBox3.Text) = Person(i, 0) Then
+            If TextBox3.Text = Person(i, 0) Then
 
                 Person(i, 0) = ""
                 Person(i, 1) = ""
                 Person(i, 2) = ""
-                Person(i, 3) = ""
+
 
             End If
 
@@ -315,7 +315,7 @@ Public Class Form1
 
 
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
         Konto(KontoPointer, 0) = DateTimePicker1.Value
         Konto(KontoPointer, 1) = TextBox4.Text
@@ -369,7 +369,7 @@ Public Class Form1
 
 
     End Sub
-    Private Sub Button5_Click(sender As Object, e As EventArgs)
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
 
         BarKonto(BarKontoPointer, 0) = DateTimePicker2.Value
         BarKonto(BarKontoPointer, 1) = TextBox16.Text

@@ -648,43 +648,24 @@ Public Class Form1
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
 
 
-        'DebtorBill.Add(New Debtor("324", "B lu"))
-        'DebtorBill.Add(New Debtor("32", "Bla"))
-        'DebtorBill.Add(New Debtor("1", "Bla"))
-        'DebtorBill.Add(New Debtor("324", "B lu"))
-        'DebtorBill.Add(New Debtor("32", "Bla"))
-        'DebtorBill.Add(New Debtor("1", "Bla"))
-        For i = 0 To 50
+        DebtorBill.Add(New Debtor("324", "B lu"))
+        DebtorBill.Add(New Debtor("32", "Bla"))
+        DebtorBill.Add(New Debtor("1", "Bla"))
+        DebtorBill.Add(New Debtor("324", "B lu"))
+        DebtorBill.Add(New Debtor("32", "Bla"))
+        DebtorBill.Add(New Debtor("1", "Bla"))
 
-            For j = 0 To 19
+        'Dim bs As New BindingSource
+        'bs.DataSource = DebtorBill
 
-                DebtorBill.Add(New Debtor(Person(i, 0), Person(i, 1), j))
+        'DataGridView1.DataSource = bs
 
-            Next
-
-        Next
 
 
         For Each NDeb As Debtor In DebtorBill
-            Dim count As Integer
+            Console.WriteLine(NDeb.Output())
 
-            ListView6.Items.Add(NDeb.Output(0))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(1))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(2))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(3))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(4))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(5))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(6))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(7))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(8))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(9))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(10))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(11))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(12))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(13))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(14))
-            ListView6.Items(count).SubItems.Add(NDeb.Output(15))
-            count += 1
+            ListView6.Items.Add(NDeb.Output)
         Next
 
 
@@ -697,9 +678,4 @@ Public Class Form1
 
 
 
-    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
-
-
-
-    End Sub
 End Class

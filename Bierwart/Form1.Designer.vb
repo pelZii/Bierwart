@@ -112,6 +112,13 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.ListView6 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader41 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.TextBox30 = New System.Windows.Forms.TextBox()
@@ -146,8 +153,22 @@ Partial Class Form1
         Me.ColumnHeader38 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader39 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader40 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ListView6 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader41 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader42 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader43 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader44 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader45 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader46 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader47 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader48 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader49 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader50 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader51 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader52 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader53 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader54 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader55 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader56 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -155,6 +176,7 @@ Partial Class Form1
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabPage5.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -178,25 +200,25 @@ Partial Class Form1
         'SpeichernToolStripMenuItem1
         '
         Me.SpeichernToolStripMenuItem1.Name = "SpeichernToolStripMenuItem1"
-        Me.SpeichernToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.SpeichernToolStripMenuItem1.Size = New System.Drawing.Size(151, 22)
         Me.SpeichernToolStripMenuItem1.Text = "Speichern"
         '
         'BestandsdatenToolStripMenuItem
         '
         Me.BestandsdatenToolStripMenuItem.Name = "BestandsdatenToolStripMenuItem"
-        Me.BestandsdatenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BestandsdatenToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.BestandsdatenToolStripMenuItem.Text = "Bestandsdaten"
         '
         'SpeichernToolStripMenuItem
         '
         Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
-        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.SpeichernToolStripMenuItem.Text = "Abschluss"
         '
         'BeendenToolStripMenuItem
         '
         Me.BeendenToolStripMenuItem.Name = "BeendenToolStripMenuItem"
-        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.BeendenToolStripMenuItem.Text = "Beenden"
         '
         'KontoToolStripMenuItem
@@ -867,6 +889,9 @@ Partial Class Form1
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.DataGridView1)
+        Me.TabPage5.Controls.Add(Me.Button7)
+        Me.TabPage5.Controls.Add(Me.Label17)
         Me.TabPage5.Controls.Add(Me.ListView6)
         Me.TabPage5.Controls.Add(Me.Label6)
         Me.TabPage5.Location = New System.Drawing.Point(4, 24)
@@ -876,6 +901,53 @@ Partial Class Form1
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "TabPage5"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
+        Me.DataGridView1.Location = New System.Drawing.Point(527, 66)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView1.TabIndex = 4
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Column1"
+        Me.Column1.Name = "Column1"
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Column2"
+        Me.Column2.Name = "Column2"
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(435, 122)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.TabIndex = 3
+        Me.Button7.Text = "Button7"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(524, 263)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(45, 13)
+        Me.Label17.TabIndex = 2
+        Me.Label17.Text = "Label17"
+        '
+        'ListView6
+        '
+        Me.ListView6.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader41, Me.ColumnHeader42, Me.ColumnHeader43, Me.ColumnHeader44, Me.ColumnHeader45, Me.ColumnHeader46, Me.ColumnHeader47, Me.ColumnHeader48, Me.ColumnHeader49, Me.ColumnHeader50, Me.ColumnHeader51, Me.ColumnHeader52, Me.ColumnHeader53, Me.ColumnHeader54, Me.ColumnHeader55, Me.ColumnHeader56})
+        Me.ListView6.Location = New System.Drawing.Point(48, 6)
+        Me.ListView6.Name = "ListView6"
+        Me.ListView6.Size = New System.Drawing.Size(297, 481)
+        Me.ListView6.TabIndex = 1
+        Me.ListView6.UseCompatibleStateImageBehavior = False
+        Me.ListView6.View = System.Windows.Forms.View.Details
         '
         'Label6
         '
@@ -1112,15 +1184,8 @@ Partial Class Form1
         Me.ColumnHeader40.Text = "Fassbrause Out"
         Me.ColumnHeader40.Width = 99
         '
-        'ListView6
+        'PrintDocument1
         '
-        Me.ListView6.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader41})
-        Me.ListView6.Location = New System.Drawing.Point(249, 372)
-        Me.ListView6.Name = "ListView6"
-        Me.ListView6.Size = New System.Drawing.Size(121, 97)
-        Me.ListView6.TabIndex = 1
-        Me.ListView6.UseCompatibleStateImageBehavior = False
-        Me.ListView6.View = System.Windows.Forms.View.Details
         '
         'Form1
         '
@@ -1145,6 +1210,7 @@ Partial Class Form1
         Me.TabPage4.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
         Me.TabPage5.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
         Me.TabPage6.PerformLayout()
         Me.ResumeLayout(False)
@@ -1277,5 +1343,26 @@ Partial Class Form1
     Friend WithEvents DateTimePicker4 As System.Windows.Forms.DateTimePicker
     Friend WithEvents ListView6 As System.Windows.Forms.ListView
     Friend WithEvents ColumnHeader41 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents Button7 As System.Windows.Forms.Button
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ColumnHeader42 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader43 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader44 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader45 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader46 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader47 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader48 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader49 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader50 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader51 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader52 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader53 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader54 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader55 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader56 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
 
 End Class

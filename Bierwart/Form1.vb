@@ -648,12 +648,6 @@ Public Class Form1
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
 
 
-        'DebtorBill.Add(New Debtor("324", "B lu"))
-        'DebtorBill.Add(New Debtor("32", "Bla"))
-        'DebtorBill.Add(New Debtor("1", "Bla"))
-        'DebtorBill.Add(New Debtor("324", "B lu"))
-        'DebtorBill.Add(New Debtor("32", "Bla"))
-        'DebtorBill.Add(New Debtor("1", "Bla"))
         For i = 0 To 50
 
             For j = 0 To 19
